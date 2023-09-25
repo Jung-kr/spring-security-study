@@ -1,6 +1,34 @@
+#
+#server:
+#  port: 8080
+#  servlet:
+#    context-path: /blog
+
 spring:
+  mvc:  # JSP 사용을 위한 설정
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/wooo?serverTimezone=Asia/Seoul
-    username: woo
-    password: woo1234
+    username: root
+    password: 1234
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create  # create는 프로젝트 재실행할 때마다 테이블 새로 생성
+      naming:
+        # 테이블을 만들 때 Entity의 변수명 그대로 db 필드에 생성해줌
+        # SpringPhysicalNamingStrategy는 cammel표기법 -> 언더바
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false  # JPA의 기본 넘버링 전략을 따라가는지 여부 -> 따라가지 않겠다, 직접 설정
+    show-sql: true
+    properties:
+      hibernate.format_sql: true  # show-sql은 원래 한줄로 나오지기 때문에 보기 편하도록 사용
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
