@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<%-- navbar --%>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <a class="navbar-brand" href="/">Wooo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -20,10 +21,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">로그인</a>
+        <a class="nav-link" href="/user/login">로그인</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">회원가입</a>
+        <a class="nav-link" href="/user/join">회원가입</a>
       </li>
     </ul>
   </div>
@@ -32,6 +33,13 @@
 
 <div class="container">
 
+</div>
+
+<%-- footer --%>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Created by Wooo</p>
+  <p>010-1234-5678</p>
+  <p>충북 청주시 XX동</p>
 </div>
 
 </body>
